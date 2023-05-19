@@ -1,0 +1,22 @@
+name: Play Music on Pull Request
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  play_music:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Play Music
+        run: |
+          # Add commands here to play music
+          # For example, you can use a music player like `mpg123`
+          # Make sure the music file is present in your repository
+          mpg123 your-music-file.mp3
